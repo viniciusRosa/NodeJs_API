@@ -1,3 +1,5 @@
+require('dotenv/config');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -9,6 +11,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 require('./app/controllers/index')(app); 
 
-app.listen(2323, () => {
+app.listen(process.env.NODE_PORT, () => {
     console.log('ok');
 })
